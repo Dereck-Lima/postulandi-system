@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:postulandi_system/first_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const FirstPage(),
     );
   }
 }
