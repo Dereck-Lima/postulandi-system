@@ -21,22 +21,11 @@ class _FirstPageState extends State<FirstPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     DrawerHeader(
-                      child: Image.asset("assets/images/logo.png"),
+                      child: Image.asset("assets/images/postulandi_logo.png"),
                     ),
-                    ListTile(
-                      onTap: () {},
-                      leading: Container(
-                        width: 15,
-                        height: 15,
-                        color: Colors.green,
-                      ),
-                      horizontalTitleGap: 0.0,
-                      title: const Text(
-                        "Dashboard",
-                        style: TextStyle(
-                          color: Colors.white54,
-                        ),
-                      ),
+                    DrawerListTile(
+                      title: "Dashboard",
+                      press: () {},
                     ),
                   ],
                 ),
@@ -49,6 +38,30 @@ class _FirstPageState extends State<FirstPage> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class DrawerListTile extends StatelessWidget {
+  const DrawerListTile({
+    required this.title,
+    required this.press,
+    super.key,
+  });
+
+  final String title;
+  final VoidCallback press;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: press,
+      title: Text(
+        title,
+        style: const TextStyle(
+          color: Colors.white54,
         ),
       ),
     );
